@@ -31,10 +31,7 @@ function update (event){
     if(event.keyCode == 40 && direction != "up") direction = "down";
     }
 
-
-
-
-function iniciarJogo(){
+    function iniciarJogo(){
     criarBG();
     criarCobrinha();
 
