@@ -28,6 +28,11 @@ function iniciarJogo(){
 
     let snakex = snake[0].x;
     let snakey = snake[0].y;
+
+    if(direction == "right") snakeX += box;
+    if(direction == "left") snakeX -= box;
+    if(direction == "up") snakeY -= box;
+    if(direction == "down") snakeY += box;
 }
 
 let jogo = setInterval(iniciarJogo, 100);
