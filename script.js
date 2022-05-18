@@ -22,6 +22,12 @@ function criarCobrinha(){
     }
 }
 
-criarBG();
-criarCobrinha();
+function iniciarJogo(){
+    criarBG();
+    criarCobrinha();
+}
+
+let jogo = setInterval(iniciarJogo, 100);
+
+
 
