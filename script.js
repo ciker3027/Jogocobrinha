@@ -8,6 +8,10 @@ snake[0] = {
 }
 
 let direction = "right";
+let food = {
+    x: Math.floor(Math.random() * 15 + 1) * box,
+    y: Math.floor(Math.random() * 15 + 1) * box
+}
 
 function criarBG() {
     context.fillStyle = "lightgreen";
@@ -20,6 +24,11 @@ function criarCobrinha(){
         context.fillStyle = "green";
         context.fillRect(snake[i].x, snake[i].y, box, box);
     }
+}
+
+function drawFood(){
+    context.fillStyle = "red";
+    context.fillRect(food.x, food.y, box, box);
 }
 
 document.addEventListener('keydown', update);
@@ -40,6 +49,7 @@ function update (event){
     
     criarBG();
     criarCobrinha();
+    criarFood();
 
     let snakex = snake[0].x;
     let snakey = snake[0].y;
@@ -48,6 +58,15 @@ function update (event){
     if(direction == "left") snakeX -= box;
     if(direction == "up") snakeY -= box;
     if(direction == "down") snakeY += box;
+
+    if(snakeX != food.x || snakeY != food.y){
+        snake.pop();
+
+    }
+    else{ food.x = Math.floor(Math.random() * 15 + 1) * box,
+          food.y = Math.floor(Math.random() * 15 + 1) * box
+ 
+    }
 
     snake.pop();
     let newHead = {
