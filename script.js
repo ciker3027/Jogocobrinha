@@ -33,6 +33,14 @@ function iniciarJogo(){
     if(direction == "left") snakeX -= box;
     if(direction == "up") snakeY -= box;
     if(direction == "down") snakeY += box;
+
+    snake.pop();
+    let newHead = {
+        x: snakeX,
+        y: snakeY
+    }
+
+    snake.unshift(newHead);
 }
 
 let jogo = setInterval(iniciarJogo, 100);
