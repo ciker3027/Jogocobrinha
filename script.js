@@ -7,6 +7,8 @@ snake[0] = {
     y: 8 * box
 }
 
+let direction = "right";
+
 function criarBG() {
     context.fillStyle = "lightgreen";
     context.fillRect(0, 0, 16 * box, 16 * box);
@@ -21,3 +23,5 @@ function criarCobrinha(){
 }
 
 criarBG();
+criarCobrinha();
+
