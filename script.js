@@ -32,6 +32,10 @@ function update (event){
     }
 
     function iniciarJogo(){
+        if(snake[0].x > 15 * box && direction == "right") snake[0].x = 0;
+        
+
+    
     criarBG();
     criarCobrinha();
 
